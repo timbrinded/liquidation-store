@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "7a8ad16d-8ad4-4534-8881-47b1f35feac3",
+		"name": "Anchor Liquidations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Initial",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "totals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/totals",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"totals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrows",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/borrows",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"borrows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find bLuna",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}wasm/contracts/{{ContractAddress}}/store?query_msg={\"borrower\":{\"address\":\"{{WalletAddress}}\"}}",
+					"host": [
+						"{{host}}wasm"
+					],
+					"path": [
+						"contracts",
+						"{{ContractAddress}}",
+						"store"
+					],
+					"query": [
+						{
+							"key": "query_msg",
+							"value": "{\"borrower\":{\"address\":\"{{WalletAddress}}\"}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ContractAddress",
+			"value": "terra1ptjp2vfjrwh0j0faj9r6katm640kgjxnwwq9kn"
+		},
+		{
+			"key": "host",
+			"value": "https://lcd.terra.dev/"
+		},
+		{
+			"key": "WalletAddress",
+			"value": "terra1ras0wl3t0symvhsp9ty3u9r750exrrqklrahp2"
+		}
+	]
+}
